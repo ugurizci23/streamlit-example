@@ -10,7 +10,7 @@ import datetime
 
 zaman=str(datetime.datetime.now())
 
-con=sqlite3.connect("trendyorum.sqlite3")
+conn=sqlite3.connect("trendyorum.sqlite3")
 c=conn.cursor()
 
 c.execute("CREATE TABLE IF NOT EXİST testler(yorum TEXT, sonuc TEXT,zaman TEXT)")
