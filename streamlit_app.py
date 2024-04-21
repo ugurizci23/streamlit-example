@@ -13,7 +13,7 @@ zaman=str(datetime.datetime.now())
 conn=sqlite3.connect("trendyorum.sqlite3")
 c=conn.cursor()
 
-c.execute("CREATE TABLE IF NOT EXİST testler(yorum TEXT, sonuc TEXT,zaman TEXT)")
+c.execute("CREATE TABLE IF NOT EXIST testler(yorum TEXT, sonuc TEXT,zaman TEXT)")
 conn.commit()
 
 df=pd.read_csv("yorum.csv", on_bad_lines="skip", delimiter=";")
