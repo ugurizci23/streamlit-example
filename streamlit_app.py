@@ -5,6 +5,16 @@ import string
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+import sqlite3
+import datetime
+
+zaman=str(datetime.datetime.now())
+
+con=sqlite3.connect("trendyorum.sqlite3")
+c=conn.cursor()
+
+c.execute("CREATE TABLE IF NOT EXİST testler(yorum TEXT, sonuc TEXT,zaman TEXT)")
+conn.commit()
 
 df=pd.read_csv("yorum.csv", on_bad_lines="skip", delimiter=";")
 
@@ -54,6 +64,8 @@ if btn:
     st.subheader(s)
     st.write("Model Skoru:",skor)
 
+    c.execute("INSERT INTO yorumlar VALUES(?,?,?)",(y,s,zaman))
+    conn.commit()
 
 
 
