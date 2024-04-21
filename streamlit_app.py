@@ -71,7 +71,6 @@ c.execute("SELECT * FROM testler")
 testler=c.fetchall()
 
 st.table(testler)
-conn.commit()
 
 
 
