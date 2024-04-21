@@ -64,7 +64,7 @@ if btn:
     st.subheader(s)
     st.write("Model Skoru:",skor)
 
-    c.execute("INSERT INTO yorumlar VALUES(?,?,?)",(y,s,zaman))
+    c.execute("INSERT INTO testler VALUES(?,?,?)",(y,s,zaman))
     conn.commit()
 
 c.execute("SELECT * FROM testler")
