@@ -67,5 +67,11 @@ if btn:
     c.execute("INSERT INTO yorumlar VALUES(?,?,?)",(y,s,zaman))
     conn.commit()
 
+c.execute("SELECT * FROM testler")
+testler=c.fetchall()
+
+st.table(testler)
+conn.commit()
+
 
 
